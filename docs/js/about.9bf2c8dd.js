@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkpevara_github_io"]=self["webpackChunkpevara_github_io"]||[]).push([[594],{5609:function(u,a,n){n.r(a),n.d(a,{default:function(){return b}});var t=n(6768);const e={class:"about"},r=(0,t.Lk)("h1",null,"This is an about page",-1),i=[r];function s(u,a){return(0,t.uX)(),(0,t.CE)("div",e,i)}var c=n(1241);const o={},h=(0,c.A)(o,[["render",s]]);var b=h}}]);
-//# sourceMappingURL=about.9bf2c8dd.js.map
