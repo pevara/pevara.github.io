@@ -69,6 +69,7 @@ body {
 }
 #app {
 	min-height: 100vh;
+	background: rgba(142, 189, 205, .03);
 }
 
 .icon {

@@ -1,12 +1,11 @@
 <template>
-    <h1 class="text-center mb-3">
+    <h1 class="text-center mb-3 mt-1">
         {{ t("page_title") }}
     </h1>
     <div class="vstack gap-2">
-        <RouterLink v-for="tool in tools" :to="tool.href" :key="tool.name" class="tool btn btn-outline-primary btn-lg ripple-surface">
+        <RouterLink v-for="tool in tools" :to="tool.href" :key="tool.name" class="tool btn btn-outline-primary btn-lg ripple-surface" :data-name="tool.name">
             <span class="icon">{{ tool.icon }}</span>
             {{ t(tool.name) }}
-            <span class="ripple-surface"></span>
         </RouterLink>
     </div>
 </template>

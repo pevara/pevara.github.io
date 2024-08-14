@@ -4,6 +4,7 @@ import AboutView from "@/views/AboutView.vue";
 import PrivacyView from "@/views/PrivacyView.vue";
 import SettingsView from "@/views/SettingsView.vue";
 import TriangleView from "@/views/TriangleView.vue";
+import ConversionView from "@/views/ConversionView.vue";
 
 const routes: Array<RouteRecordRaw> = [
 	{
@@ -31,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
 		name: "triangles",
 		component: TriangleView,
 	},
+	{
+        path: '/conversion',
+        name: 'conversion',
+        component: ConversionView
+    },
 ];
 
 const router = createRouter({
