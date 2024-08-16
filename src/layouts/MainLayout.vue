@@ -12,8 +12,8 @@
                     </q-avatar>
                     {{ $t('app_title') }}
                 </q-toolbar-title>
-                <q-btn-dropdown dropdown-icon="settings" rounded unelevated>
-                    <app-menu />
+                <q-btn-dropdown dropdown-icon="settings" round unelevated>
+                    <settings-menu />
                 </q-btn-dropdown>
             </q-toolbar>
         </q-header>
@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import AppMenu from 'src/components/AppMenu.vue';
+import SettingsMenu from 'src/components/SettingsMenu.vue';
 defineOptions({
     name: 'MainLayout',
 });

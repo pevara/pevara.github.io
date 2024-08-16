@@ -1,17 +1,22 @@
 <template>
     <div
-        class="fullscreen bg-teal text-white text-center q-pa-md flex flex-center"
+        class="fullscreen bg-dark text-white text-center q-pa-md flex flex-center"
     >
         <div>
-            <div style="font-size: 30vh">
-                <q-icon name="sentiment_very_dissatisfied" />
-            </div>
+            <div style="font-size: 30vh">404</div>
 
             <div class="text-h2" style="opacity: 0.4">
                 Oops. Nothing here...
             </div>
 
-            <q-btn class="q-mt-xl" to="/" label="Go Home" no-caps />
+            <q-btn
+                class="q-mt-xl"
+                to="/"
+                label="Go Home"
+                no-caps
+                color="primary"
+                elevated
+            />
         </div>
     </div>
 </template>

@@ -1,0 +1,9 @@
+{
+    "@quasar/testing-unit-jest": {
+        "options": ["majestic"]
+    },
+    "@quasar/testing-e2e-cypress": {
+        "port": 9000,
+        "options": []
+    }
+}

@@ -22,6 +22,7 @@
                         @update:model-value="setLocale(localeOption.value)"
                         :name="localeOption.value"
                         :disable="localeOption.disable"
+                        color="secondary"
                     />
                 </q-item-section>
             </q-item>
@@ -48,6 +49,7 @@
                         @update:model-value="setTheme(themeOption.value)"
                         :name="themeOption.value"
                         :disable="themeOption.disable"
+                        color="secondary"
                     />
                 </q-item-section>
             </q-item>
@@ -108,7 +110,7 @@ import { useI18n } from 'vue-i18n';
 const $q = useQuasar();
 
 defineOptions({
-    name: 'AppMenu',
+    name: 'SettingsMenu',
 });
 
 const settings = AppSettingsService;
