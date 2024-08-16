@@ -1,0 +1,7 @@
+{
+    "params": {
+        "icon": "src/assets/favicon.png",
+        "quality": 10,
+        "include": ["pwa", "spa"]
+    }
+}
