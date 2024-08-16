@@ -4,11 +4,7 @@
             <q-toolbar>
                 <q-toolbar-title>
                     <q-avatar>
-                        <q-icon
-                            name="square_foot"
-                            size="2rem"
-                            color="secondary"
-                        />
+                        <q-icon :name="mdiRulerSquareCompass" size="2rem" />
                     </q-avatar>
                     {{ $t('app_title') }}
                 </q-toolbar-title>
@@ -28,6 +24,7 @@
 
 <script setup lang="ts">
 import SettingsMenu from 'src/components/SettingsMenu.vue';
+import { mdiRulerSquareCompass } from '@quasar/extras/mdi-v6';
 defineOptions({
     name: 'MainLayout',
 });

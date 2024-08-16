@@ -7,8 +7,11 @@ export default {
     theme_dark_label: 'Donker',
     theme_light_label: 'Licht',
     theme_auto_label: 'Auto',
+    theme_changed_notification: 'Thema gewijzigd naar {theme}.',
+    language_changed_notification: 'Taal gewijzigd naar {language}.',
+    cache_cleared_notification: 'Alla data is verwijderd.',
     advanced_menu_label: 'Geavanceerd',
-    clear_data_button_label: 'Verwijder Alle Gegevens',
+    clear_data_button_label: 'Verwijder Data',
     confirm_clear_cache_dialog:
-        'Weet u zeker dat u alle gegevens (geschiedenis, notities, ...) wilt verwijderen? Dit kan niet ongedaan worden gemaakt!',
+        'Dit omvat alle opgeslagen notities, instellingen en geschiedenis. Verwijderen kan niet ongedaan worden gemaakt! Weet je het zeker?',
 };

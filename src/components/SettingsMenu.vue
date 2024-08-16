@@ -69,24 +69,31 @@
 
                 <q-dialog v-model="clearCacheDialog" persistent>
                     <q-card>
+                        <q-card-section
+                            header
+                            class="text-h6 bg-negative text-white"
+                        >
+                            {{ $t('clear_data_button_label') }}
+                        </q-card-section>
+
                         <q-card-section class="row items-center">
                             <q-avatar
                                 icon="delete"
                                 color="negative"
                                 text-color="white"
                             />
-                            <span class="q-ml-sm">{{
-                                $t('confirm_clear_cache_dialog')
-                            }}</span>
+                            <p class="col-9 q-ml-md">
+                                {{ $t('confirm_clear_cache_dialog') }}
+                            </p>
                         </q-card-section>
 
                         <q-card-actions align="right">
-                            <q-btn flat label="Cancel" v-close-popup />
+                            <q-btn outline label="Cancel" v-close-popup />
                             <q-btn
-                                flat
                                 label="OK"
                                 color="negative"
                                 v-close-popup
+                                elevated
                                 @click="clearCache"
                             />
                         </q-card-actions>
@@ -121,31 +128,68 @@ const i18n = useI18n();
 
 const clearCacheDialog = ref(false);
 
-const setTheme = (theme: ThemeValue) => {
+const setTheme = (theme: ThemeValue, mute = false) => {
     store.theme = theme;
     let value = settings.convertThemeToQuasar(theme);
     $q.dark.set(value);
     themeOptions.value.map((option) => {
         option.disable = option.value === theme;
     });
+    if (!mute) {
+        $q.notify({
+            message: i18n.t('theme_changed_notification', {
+                theme: i18n.t('theme_' + theme + '_label'),
+            }),
+            type: 'positive',
+            position: 'bottom',
+            progress: true,
+        });
+    }
 };
 
 const clearCache = () => {
     localStorage.clear();
+    console.log($q);
+    $q.notify({
+        message: i18n.t('cache_cleared_notification'),
+        type: 'positive',
+        position: 'bottom',
+        progress: true,
+    });
     console.log('Cache cleared');
 };
 
-const setLocale = (locale: LocaleValue) => {
+const setLocale = (locale: LocaleValue, mute = false) => {
     store.locale = locale;
     i18n.locale.value = locale;
     localeOptions.value.map((option) => {
         option.disable = option.value === locale;
     });
+    let lang = 'undefined';
+    switch (locale) {
+        case 'en-US':
+            lang = 'English';
+            break;
+        case 'nl':
+            lang = 'Nederlands';
+            break;
+    }
+    if (!mute) {
+        console.log($q);
+        $q.notify({
+            message: i18n.t('language_changed_notification', {
+                language: lang,
+            }),
+            type: 'positive',
+            position: 'bottom',
+            progress: true,
+        });
+    }
 };
 
 onMounted(() => {
     // set defaults from store
-    setLocale(store.locale);
-    setTheme(store.theme);
+    setLocale(store.locale, true);
+    setTheme(store.theme, true);
 });
 </script>
