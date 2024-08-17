@@ -14,4 +14,13 @@ export default {
     clear_data_button_label: 'Remove All Data',
     confirm_clear_cache_dialog:
         'This includes all saved notes, settings and history. Removal can not be undone! Are you sure?',
+    tools_menu_title: 'Choose your Tool',
+    tool_label_triangle: 'Triangles',
+    tool_label_spacing: 'Equal Spacing',
+    tool_label_slope: 'Slopes',
+    tool_label_conversion: 'Unit Conversion',
+    tool_label_surface: 'Surface Area',
+    tool_label_volume: 'Volume',
+    tool_label_notes: 'Notes',
+    tool_label_history: 'History',
 };

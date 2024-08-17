@@ -20,5 +20,8 @@
         "roboto",
         "splashscreen",
         "themify"
+    ],
+    "html-css-class-completion.remoteStyleSheets": [
+        "https://cdn.jsdelivr.net/npm/quasar@2.16.9/dist/quasar.prod.css"
     ]
 }

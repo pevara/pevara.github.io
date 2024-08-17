@@ -1,6 +1,6 @@
 <template>
     <div style="max-width: 350px">
-        <q-list padding>
+        <q-list>
             <q-item-label header>{{ $t('language_menu_label') }}</q-item-label>
             <q-item
                 v-bind:key="localeOption.value"
@@ -22,7 +22,7 @@
                         @update:model-value="setLocale(localeOption.value)"
                         :name="localeOption.value"
                         :disable="localeOption.disable"
-                        color="secondary"
+                        color="accent"
                     />
                 </q-item-section>
             </q-item>
@@ -49,7 +49,7 @@
                         @update:model-value="setTheme(themeOption.value)"
                         :name="themeOption.value"
                         :disable="themeOption.disable"
-                        color="secondary"
+                        color="accent"
                     />
                 </q-item-section>
             </q-item>
