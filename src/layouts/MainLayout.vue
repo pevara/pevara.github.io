@@ -4,12 +4,22 @@
             <q-toolbar>
                 <q-toolbar-title>
                     <q-avatar>
-                        <q-icon :name="mdiRulerSquareCompass" size="2rem" />
+                        <q-icon :name="store.icon" size="2rem" />
                     </q-avatar>
                     {{ $t('app_title') }}
                 </q-toolbar-title>
-                <q-btn-dropdown dropdown-icon="settings" round unelevated>
-                    <settings-menu />
+                <q-btn-dropdown
+                    dropdown-icon="settings"
+                    round
+                    unelevated
+                    transition-hide="jump-up"
+                    transition-show="jump-down"
+                    transition-duration="100"
+                >
+                    <settings-menu
+                        class="shadow-up-8"
+                        style="max-height: 95vh"
+                    />
                 </q-btn-dropdown>
             </q-toolbar>
         </q-header>
@@ -24,8 +34,9 @@
 
 <script setup lang="ts">
 import SettingsMenu from 'src/components/SettingsMenu.vue';
-import { mdiRulerSquareCompass } from '@quasar/extras/mdi-v6';
+import { useAppStore } from 'src/stores/app-store';
 defineOptions({
     name: 'MainLayout',
 });
+const store = useAppStore();
 </script>

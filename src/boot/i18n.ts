@@ -1,6 +1,5 @@
 import { boot } from 'quasar/wrappers';
 import { createI18n } from 'vue-i18n';
-
 import messages from 'src/i18n';
 
 export type MessageLanguages = keyof typeof messages;
@@ -20,14 +19,13 @@ declare module 'vue-i18n' {
     export interface DefineNumberFormat {}
 }
 /* eslint-enable @typescript-eslint/no-empty-interface */
+export const i18n = createI18n({
+    locale: 'en-US',
+    legacy: false,
+    messages,
+});
 
 export default boot(({ app }) => {
-    const i18n = createI18n({
-        locale: 'en-US',
-        legacy: false,
-        messages,
-    });
-
     // Set i18n instance on app
     app.use(i18n);
 });

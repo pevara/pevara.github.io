@@ -10,7 +10,7 @@
                 color="primary"
                 outline
                 :icon="tool.icon"
-                :label="$t(tool.label)"
+                :label="tool.label"
                 class="full-width text-left items-start"
                 size="lg"
             />
@@ -21,5 +21,5 @@
 <script lang="ts" setup>
 import { Tools } from 'src/models/Tools';
 
-const tools = Tools;
+const tools = Tools();
 </script>
