@@ -1,5 +1,5 @@
 import { flagGB, flagNL } from 'quasar-extras-svg-icons/country-flag-icons';
-import { AppSettingsService } from 'src/models/services/AppSettings';
+import { AppSettingsService } from 'src/models/AppSettings';
 import { expect } from '@jest/globals';
 
 describe('AppSettingsService', () => {

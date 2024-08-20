@@ -1,7 +1,21 @@
 <template>
     <div style="max-width: 350px">
-        <q-list>
-            <q-item-label header>{{ $t('language_menu_label') }}</q-item-label>
+        <q-list class="q-pb-sm">
+            <q-item class="q-pa-none">
+                <q-item-section class="q-item__label--header">
+                    {{ $t('language_menu_label') }}
+                </q-item-section>
+                <q-item-section side>
+                    <q-btn
+                        v-close-popup
+                        icon="close"
+                        flat
+                        size="xs"
+                        round
+                        class="q-pr-sm"
+                    />
+                </q-item-section>
+            </q-item>
             <q-item
                 v-bind:key="localeOption.value"
                 v-for="localeOption in localeOptions"
@@ -56,6 +70,17 @@
 
             <q-separator spaced />
             <q-item-label header>{{ $t('advanced_menu_label') }}</q-item-label>
+            <q-item
+                clickable
+                href="https://github.com/pevara/pevara.github.io/issues"
+            >
+                <q-item-section avatar>
+                    <q-icon name="bug_report" />
+                </q-item-section>
+                <q-item-section>
+                    {{ $t('report_issue_label') }}
+                </q-item-section>
+            </q-item>
             <q-item class="full-width">
                 <q-btn
                     color="negative"
@@ -63,38 +88,36 @@
                     :label="$t('clear_data_button_label')"
                     @click="clearCacheDialog = true"
                     icon="delete"
-                    class="self-stretch"
+                    class="full-width"
                 >
                 </q-btn>
 
                 <q-dialog v-model="clearCacheDialog" persistent>
                     <q-card>
-                        <q-card-section
-                            header
-                            class="text-h6 bg-negative text-white"
-                        >
-                            {{ $t('clear_data_button_label') }}
-                        </q-card-section>
+                        <q-bar class="bg-negative text=white">
+                            <q-icon name="delete" />
+                            {{ $t('clear_data_button_label') }}?
+                        </q-bar>
 
-                        <q-card-section class="row items-center">
-                            <q-avatar
-                                icon="delete"
-                                color="negative"
-                                text-color="white"
-                            />
-                            <p class="col-9 q-ml-md">
-                                {{ $t('confirm_clear_cache_dialog') }}
-                            </p>
+                        <q-card-section>
+                            {{ $t('confirm_clear_cache_dialog') }}
                         </q-card-section>
 
                         <q-card-actions align="right">
-                            <q-btn outline label="Cancel" v-close-popup />
+                            <q-btn
+                                outline
+                                label="Cancel"
+                                v-close-popup
+                                icon="cancel"
+                                dense
+                            />
                             <q-btn
                                 label="OK"
                                 color="negative"
                                 v-close-popup
                                 elevated
                                 @click="clearCache"
+                                icon="delete"
                             />
                         </q-card-actions>
                     </q-card>
@@ -111,7 +134,7 @@ import {
     AppSettingsService,
     LocaleValue,
     ThemeValue,
-} from 'src/models/services/AppSettings';
+} from 'src/models/AppSettings';
 import { useAppStore } from 'src/stores/app-store';
 import { useI18n } from 'vue-i18n';
 const $q = useQuasar();
